@@ -1,0 +1,335 @@
+/* Variáveis CSS para cores e fontes */
+:root {
+    --primary-color: #2c3e50; /* Azul escuro */
+    --secondary-color: #34495e; /* Azul mais claro */
+    --accent-color: #e74c3c; /* Vermelho */
+    --text-color: #ecf0f1; /* Cinza claro */
+    --light-text-color: #ffffff; /* Branco */
+    --dark-text-color: #2c3e50; /* Azul escuro para texto em fundo claro */
+
+    --title-font: 'Roboto', sans-serif; /* Fonte para títulos */
+    --body-font: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Estilos gerais para seções */
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 960px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    font-family: var(--title-font);
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navegação (Menu) */
+nav {
+    background-color: var(--accent-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--light-text-color);
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Apresentação (Cabeçalho) */
+#apresentacao {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Padrão para mobile, será alterado para desktop */
+    align-items: center;
+}
+
+#apresentacao h1 {
+    margin-bottom: 10px;
+}
+
+#apresentacao .apresentacao-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#apresentacao img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+#apresentacao .apresentacao-info p {
+    margin: 5px 0;
+}
+
+#apresentacao .apresentacao-texto {
+    text-align: justify;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Educação e Experiência */
+.educacao-item, .experiencia-item {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.educacao-item h3, .experiencia-item h3 {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.educacao-item p, .experiencia-item p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.experiencia-item ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.experiencia-item li {
+    margin-bottom: 5px;
+}
+
+/* Certificações */
+.certificacao-item {
+    background-color: var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.certificacao-item h3 {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* Habilidades Técnicas */
+#habilidades ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#habilidades li {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--dark-text-color); /* Contraste com o restante da página */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+footer ul li a {
+    color: var(--light-text-color);
+    font-weight: normal;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+/* Media Queries para Desktop */
+@media (min-width: 769px) {
+    #apresentacao {
+        flex-direction: row; /* Nome, foto, texto de apresentação horizontalmente */
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    #apresentacao h1 {
+        order: 1; /* Nome primeiro */
+        width: 100%;
+        text-align: center;
+    }
+
+    #apresentacao .apresentacao-info {
+        order: 3; /* Informações de contato por último */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #apresentacao img {
+        order: 2; /* Foto no meio */
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    #apresentacao .apresentacao-texto {
+        order: 4; /* Texto de apresentação por último */
+        margin-top: 20px;
+    }
+
+    /* Educação e Experiência alinhados verticalmente (já é o padrão com flex-direction: column) */
+    /* Não é necessário alterar aqui, pois já estão empilhados por padrão */
+}
+
+
+
+
+/* Media Queries para Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+    }
+
+    #apresentacao {
+        flex-direction: column; /* Garante que seja coluna para mobile */
+        align-items: center;
+        text-align: center;
+    }
+
+    #apresentacao h1 {
+        order: 1; /* Nome primeiro */
+        width: auto;
+    }
+
+    #apresentacao img {
+        order: 2; /* Foto em segundo */
+        margin: 15px 0;
+    }
+
+    #apresentacao .apresentacao-texto {
+        order: 3; /* Texto de apresentação em terceiro */
+        margin-top: 0;
+    }
+
+    #apresentacao .apresentacao-info {
+        order: 4; /* Informações de contato por último */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustes gerais para mobile */
+    section {
+        padding: 20px 15px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    #habilidades ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
